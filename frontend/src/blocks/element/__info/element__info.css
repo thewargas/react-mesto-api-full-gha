@@ -1,0 +1,5 @@
+.element__info {
+  max-height: 79px;
+  display: flex;
+  justify-content: space-between;
+}

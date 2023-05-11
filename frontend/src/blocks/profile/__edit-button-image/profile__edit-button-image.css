@@ -1,0 +1,5 @@
+@media (max-width: 425px) {
+  .profile__edit-button-image {
+    width: 7.5px;
+  }
+}

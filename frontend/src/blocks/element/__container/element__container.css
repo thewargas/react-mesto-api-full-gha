@@ -1,0 +1,8 @@
+.element__container {
+  margin: 0;
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}

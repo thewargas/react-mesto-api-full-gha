@@ -1,0 +1,8 @@
+.content {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  min-height: calc(100vh - 252px);
+  flex-direction: column;
+  align-items: center;
+}

@@ -1,0 +1,13 @@
+.element {
+  max-width: 282px;
+  display: flex;
+  background-color: white;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  transition: scale 0.2s linear;
+}
+
+.element:hover {
+  scale: 1.04;
+}

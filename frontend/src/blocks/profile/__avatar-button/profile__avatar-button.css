@@ -1,0 +1,19 @@
+.profile__avatar-button {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 122px;
+  height: 122px;
+  border-radius: 50%;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  transition: opacity 0.3s linear;
+}
+.profile__avatar-button:hover {
+  opacity: 1;
+}
+@media (max-width: 768px) {
+  .profile__avatar-button {
+    left: calc((100% - 122px) / 2);
+  }
+}
