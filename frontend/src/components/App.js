@@ -138,6 +138,7 @@ function App() {
   function handleLogout() {
     localStorage.removeItem("jwt");
     setEmail("");
+    window.location.reload();
   }
 
   function handleOverlayClick(e) {
