@@ -70,7 +70,7 @@ function App() {
 
       .then(([userData, cardsData]) => {
         setCurrentUser(userData);
-        setCards(cardsData);
+        setCards(cardsData.reverse());
       })
 
       .catch((error) => {
