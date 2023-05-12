@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+require('dotenv').config();
 const bodyParser = require('body-parser');
 const { errors } = require('celebrate');
 const router = require('./routes');
@@ -17,6 +18,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(requestLogger);
 app.use(enableCors);
+
+app.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
 
 app.use(router);
 
