@@ -74,9 +74,9 @@ class Api {
 }
 
 const api = new Api({
-  baseUrl: "https://mesto.nomoreparties.co/v1/cohort-58",
+  baseUrl: "https://api.thewargas.nomoredomains.monster",
   headers: {
-    authorization: "c9a28bcb-0219-422f-80d6-0648efb4bc5b",
+    'Authorization': `Bearer ${localStorage.getItem('jwt')}`,
     "Content-Type": "application/json",
   },
 });

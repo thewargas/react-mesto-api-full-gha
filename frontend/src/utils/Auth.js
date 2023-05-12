@@ -1,4 +1,4 @@
-export const BASE_URL = "https://auth.nomoreparties.co";
+export const BASE_URL = "https://api.thewargas.nomoredomains.monster";
 
 function handleResponse(response) {
   if (response.ok) {
