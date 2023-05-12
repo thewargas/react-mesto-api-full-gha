@@ -47,21 +47,23 @@ function App() {
           setEmail(res.data.email);
           setLoggedIn(true);
           navigate("/", { replace: true });
-
-          Promise.all([api.getInitialInfo(), api.getInitialCards()])
-
-          .then(([userData, cardsData]) => {
-              setCurrentUser(userData);
-              setCards(cardsData);
-          })
-
-          .catch((error) => {
-              console.log(error);
-          });
         })
         .catch((error) => {
           console.log(error);
         });
+    }
+
+    if (isLoggedIn) {
+      Promise.all([api.getInitialInfo(), api.getInitialCards()])
+
+      .then(([userData, cardsData]) => {
+        setCurrentUser(userData);
+        setCards(cardsData);
+      })
+
+      .catch((error) => {
+        console.log(error);
+      });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
