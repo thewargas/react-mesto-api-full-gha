@@ -211,7 +211,7 @@ function App() {
       });
   }
 
-  function handleAddPlaceSubmit(inputs, clearInputs) {
+  function handleAddPlaceSubmit(inputs) {
     setLoading(true);
     api
       .createCard(inputs)
@@ -224,7 +224,6 @@ function App() {
       })
       .finally(() => {
         setLoading(false);
-        clearInputs();
       });
   }
 
