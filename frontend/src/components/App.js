@@ -44,7 +44,7 @@ function App() {
       const jwt = localStorage.getItem("jwt");
       Auth.checkToken(jwt)
         .then((res) => {
-          setEmail(res.data.email);
+          setEmail(res.email);
           setLoggedIn(true);
           navigate("/", { replace: true });
         })
