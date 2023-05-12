@@ -219,6 +219,7 @@ function App() {
       .then((newCard) => {
         setCards([newCard, ...cards]);
         closeAllPopups();
+        navigate("/", { replace: true });
       })
       .catch((error) => {
         console.log(error);
