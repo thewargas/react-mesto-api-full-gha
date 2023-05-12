@@ -39,6 +39,14 @@ function App() {
 
   const navigate = useNavigate();
 
+  const api = new Api({
+    baseUrl: "https://api.thewargas.nomoredomains.monster",
+    headers: {
+      'Authorization': `Bearer ${localStorage.getItem('jwt')}`,
+      'Content-Type': "application/json",
+    },
+  });
+
   useEffect(() => {
     if (localStorage.getItem("jwt")) {
       const jwt = localStorage.getItem("jwt");
@@ -56,14 +64,6 @@ function App() {
   }, []);
 
   useEffect(() => {
-
-    const api = new Api({
-      baseUrl: "https://api.thewargas.nomoredomains.monster",
-      headers: {
-        'Authorization': `Bearer ${localStorage.getItem('jwt')}`,
-        'Content-Type': "application/json",
-      },
-    });
 
     if (isLoggedIn) {
       Promise.all([api.getInitialInfo(), api.getInitialCards()])
