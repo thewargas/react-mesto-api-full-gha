@@ -77,7 +77,7 @@ const api = new Api({
   baseUrl: "https://api.thewargas.nomoredomains.monster",
   headers: {
     'Authorization': `Bearer ${localStorage.getItem('jwt')}`,
-    "Content-Type": "application/json",
+    'Content-Type': "application/json",
   },
 });
 
