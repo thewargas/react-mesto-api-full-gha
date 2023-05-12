@@ -4,7 +4,7 @@ import Header from "./Header";
 import Main from "./Main";
 import Footer from "./Footer";
 import ImagePopup from "./ImagePopup";
-import api from "../utils/Api";
+import Api from "../utils/Api";
 import EditProfilePopup from "./EditProfilePopup";
 import EditAvatarPopup from "./EditAvatarPopup";
 import AddPlacePopup from "./AddPlacePopup";
@@ -56,6 +56,15 @@ function App() {
   }, []);
 
   useEffect(() => {
+
+    const api = new Api({
+      baseUrl: "https://api.thewargas.nomoredomains.monster",
+      headers: {
+        'Authorization': `Bearer ${localStorage.getItem('jwt')}`,
+        'Content-Type': "application/json",
+      },
+    });
+
     if (isLoggedIn) {
       Promise.all([api.getInitialInfo(), api.getInitialCards()])
 

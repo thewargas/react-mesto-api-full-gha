@@ -73,12 +73,4 @@ class Api {
   }
 }
 
-const api = new Api({
-  baseUrl: "https://api.thewargas.nomoredomains.monster",
-  headers: {
-    'Authorization': `Bearer ${localStorage.getItem('jwt')}`,
-    'Content-Type': "application/json",
-  },
-});
-
-export default api;
+export default Api;
