@@ -52,7 +52,10 @@ function App() {
           console.log(error);
         });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
+  useEffect(() => {
     if (isLoggedIn) {
       Promise.all([api.getInitialInfo(), api.getInitialCards()])
 
@@ -65,8 +68,7 @@ function App() {
         console.log(error);
       });
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [isLoggedIn]);
 
   useEffect(() => {
     const close = (evt) => {
