@@ -8,7 +8,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 158.160.98.201
+IP 158.160.98.201
 
 Frontend https://thewargas.nomoredomains.monster
 
