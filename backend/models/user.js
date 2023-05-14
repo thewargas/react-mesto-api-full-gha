@@ -3,6 +3,7 @@ require('mongoose-type-url');
 const validator = require('validator');
 const bcrypt = require('bcryptjs');
 const UnauthorizedError = require('../errors/unauthorized-error');
+const { urlRegExp } = require('../utils/constants');
 
 const userSchema = new mongoose.Schema({
   name: {
@@ -18,8 +19,12 @@ const userSchema = new mongoose.Schema({
     maxLength: 30,
   },
   avatar: {
-    type: mongoose.SchemaTypes.Url,
+    type: String,
     default: 'https://pictures.s3.yandex.net/resources/jacques-cousteau_1604399756.png',
+    validate: {
+      validator: (value) => urlRegExp.test(value),
+      message: 'Некорректная сслыка',
+    },
   },
   email: {
     type: String,

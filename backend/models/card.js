@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const { urlRegExp } = require('../utils/constants');
 require('mongoose-type-url');
 
 const cardSchema = new mongoose.Schema({
@@ -9,8 +10,12 @@ const cardSchema = new mongoose.Schema({
     maxLength: 30,
   },
   link: {
-    type: mongoose.SchemaTypes.Url,
+    type: String,
     required: true,
+    validate: {
+      validator: (value) => urlRegExp.test(value),
+      message: 'Некорректная сслыка',
+    },
   },
   owner: {
     type: mongoose.Schema.Types.ObjectId,
